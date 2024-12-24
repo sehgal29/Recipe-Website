@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #022658;
+    color: #F3D4D5;
+}
+
+.logo{
+    font-size: larger;
+    margin: 25px;
+}
+header {
+    background-color: #04224b;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.search-box {
+    display: flex;
+}
+.nav{
+    margin-left: 10vh;
+}
+.nav a{
+    margin: 50px;
+    font-size: large;
+    font-weight: 400;
+    color: #F3D4D5;
+    text-decoration: none;
+}
+.search-box{
+    gap: 10px;
+    margin: 20px;
+    position: absolute;
+    right: 0;
+}
+#input-dish{
+    padding: 10px;
+    width: 24vw;
+    border: none;
+    border-radius: 5px;
+    color: #F3D4D5;
+    margin: 0 15px;
+    font-size: large;
+    font-weight: 200;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #F3D4D5;
+}
+#search-btn{
+    border: none;
+    outline: none;
+    width: 20%;
+ font-size: large;
+    cursor: pointer;
+    color: #022658;
+    background-color: #F3D4D5;
+    border-radius: 10px;
+}
+section {
+    display: flex;
+    justify-content: center;
+}
+h2{
+    margin: 15px;
+}
+.recipe-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 40px;
+    margin: 10px auto;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    place-items: center;
+}
+.recipe{
+   background-color: #5d7494;
+   display: flex;
+   flex-direction: column;
+   border-radius: 10px;
+   cursor: pointer;
+   max-width: 350px;
+   transition: transform 0.3s ease-in-out;
+}
+.recipe:hover{
+    transform: scale(1.01);
+}
+.recipe img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+
+}
+.recipe span{
+    color: #f3d4d56e;
+}
+.recipe h3{
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px;
+}
+.recipe p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.recipe Button{
+    margin: 18px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #F3D4D5;
+    color: #022658;
+    font-size: large;
+    cursor: pointer;
+}
+.recipe-detail{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #022658;
+    border: 1.5px solid #F3D4D5;
+    border-radius: 10px;
+    width: 40%;
+    height: 50%;
+    transition: all 0.5s ease-in;
+    overflow-y: scroll;
+}
+.recipe-detail-content{
+    padding: 30px;
+}
+.recipe-detail::-webkit-scrollbar{
+    width: 8px;
+    height: 3px;
+}
+.recipe-detail::-webkit-scrollbar-thumb{
+    border-radius: 15px;
+    --webkit-border-radius: 15px;
+    background: #F3D4D5;
+}
+.recipeIngredients li{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+/* .re{
+    margin-left: 20px;
+} */
+.recipeInst p{
+    line-height: 30px;
+    white-space: pre-line;
+}
+.recipeName{
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.recipeName,.recipeIngredients,.recipeInst{
+    margin-bottom: 20px;
+}
+.recipe-close-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin: 15px;
+    top: 5px;
+    left: 88%;
+    background-color: #F3D4D5;
+    color: #022658;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+.error-shown{
+    display: flex;
+    flex-direction: column;
+}
+.error-shown h2{
+    margin: 25px;
+}
+.error-shown img{
+    border-radius: 5px;
+}
+@media screen and (max-width:600px){
+    header{
+        padding: 70px;
+        flex-direction: column;
+    }
+    .logo{
+        margin-top: -46px;
+    }
+    .nav{
+        margin-left: 0;
+    }
+    .nav a{
+         margin: 25px;
+         justify-content: center;
+    }
+    .search-box{
+        margin: 40px;
+        width: 80%;
+        justify-content: space-between;
+    }
+    #input-dish{
+        width: 100%;
+    }
+}
+/* Add this to the end of your CSS */
+
+@media screen and (max-width: 768px) {
+    .recipe-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav {
+        margin-left: 0;
+    }
+
+    .nav a {
+        margin: 10px;
+    }
+
+    .search-box {
+        margin: 20px auto;
+        width: 80%;
+        flex-direction: column;
+    }
+
+    #input-dish {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #search-btn {
+        width: 40%;
+        margin: 10px auto;
+    }
+
+    .recipe {
+        max-width: 250px;
+    }
+
+    header {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .recipe-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .search-box {
+        width: 90%;
+    }
+
+    #search-btn {
+        width: 50%;
+    }
+
+    .recipe {
+        max-width: 200px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .nav {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav a {
+        margin: 10px;
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+
